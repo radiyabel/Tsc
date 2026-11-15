@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tractor Supply Offer</title>
+    <style>
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Mobile Container to mimic phone screen */
+        .mobile-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        /* Top Header Area */
+        .header-area {
+            padding: 25px 10px 0 10px;
+            text-align: center;
+        }
+
+        /* Logo Styles */
+        .logo-container {
+            margin-bottom: 20px; 
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px; 
+            object-fit: contain;
+        }
+
+        /* Headline Styles for One Line */
+        .header-area h1 {
+            font-size: 16px; 
+            color: #333;
+            margin-bottom: 25px; 
+            font-weight: 600;
+            white-space: nowrap; 
+        }
+
+        /* Card Styles for Sections */
+        .card {
+            background-color: #f9f9fa;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 0 20px 20px 20px;
+        }
+
+        .card h2 {
+            font-size: 16px;
+            color: #CC0000; /* Tractor Supply Red */
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Quick Start Guide List */
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1.5px solid #CC0000; /* Tractor Supply Red */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .check-icon svg {
+            width: 12px;
+            height: 12px;
+            fill: #CC0000; /* Tractor Supply Red */
+        }
+
+        .step-text h3 {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .step-text p {
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-item:first-of-type {
+            padding-top: 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #444;
+            cursor: pointer;
+            font-weight: 500;
+            user-select: none;
+        }
+
+        .faq-question svg {
+            width: 12px;
+            height: 12px;
+            fill: #666;
+            transition: transform 0.3s ease;
+        }
+
+        /* Styles for the Answer */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .faq-answer p {
+            padding-top: 10px;
+        }
+
+        /* Open State Classes */
+        .faq-item.active .faq-answer {
+            max-height: 150px; 
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        /* Trust & Security Section */
+        .trust-section {
+            text-align: center;
+            padding: 0 20px 20px 20px;
+        }
+
+        .trust-section p.security-text {
+            font-size: 10px;
+            color: #888;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .trust-section p.copyright {
+            font-size: 11px;
+            color: #888;
+        }
+
+        /* Call to Action Button Area */
+        .cta-area {
+            padding: 0 20px 30px 20px;
+        }
+
+        .claim-btn {
+            display: block;
+            width: 100%;
+            background-color: #CC0000; /* Tractor Supply Red */
+            color: #ffffff;
+            text-align: center;
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .claim-btn:hover {
+            background-color: #990000; /* Darker Red for hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-container">
+        
+        <!-- Header & Logo -->
+        <div class="header-area">
+            <div class="logo-container">
+                <img src="https://i.postimg.cc/sxS8rSZK/images-(5).png" alt="Tractor Supply Logo">
+            </div>
+            <!-- Kept at $500 based on previous request -->
+            <h1>Complete the steps for up to a $500 coupon</h1>
+        </div>
+
+        <!-- Quick Start Guide Card -->
+        <div class="card">
+            <h2>Quick Start Guide</h2>
+            <div class="step-list">
+                
+                <div class="step-item">
+                    <div class="check-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                    <div class="step-text">
+                        <h3>Enter a valid email</h3>
+                        <p>For confirmation and updates</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="check-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                    <div class="step-text">
+                        <h3>Complete 4-5 deals</h3>
+                        <p>More deals, more opportunities</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="check-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                    <div class="step-text">
+                        <h3>Must be 18 years or older</h3>
+                        <p>Required to participate</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Common Questions Card -->
+        <div class="card">
+            <h2>Common Questions</h2>
+            
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How long do the deals take?</span>
+                    <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Most deals only take 4-5 minutes to complete. The more deals you finish, the more you can earn.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What kind of deals are included?</span>
+                    <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Deals include free trials, app downloads, surveys, and simple sign-ups from trusted partners.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Footer -->
+        <div class="trust-section">
+            <p class="security-text">SSL Secured • Encrypted • Verified • 100% Safe</p>
+            <p class="copyright">© 2026</p>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="cta-area">
+            <a href="https://linkthem.net/?offer_id=5487&aff_id=203423" class="claim-btn">Claim Now</a>
+        </div>
+
+    </div>
+
+    <!-- JavaScript to handle the accordion opening/closing -->
+    <script>
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
